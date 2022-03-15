@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8994993927E08F2C0078AF18 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8994993827E08F2C0078AF18 /* PasswordTextField.swift */; };
 		89CDE60A27DF4A5D009B8688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE60927DF4A5D009B8688 /* AppDelegate.swift */; };
 		89CDE60C27DF4A5D009B8688 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE60B27DF4A5D009B8688 /* SceneDelegate.swift */; };
 		89CDE60E27DF4A5D009B8688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE60D27DF4A5D009B8688 /* ViewController.swift */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8994993827E08F2C0078AF18 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		89CDE60627DF4A5D009B8688 /* Password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CDE60927DF4A5D009B8688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		89CDE60B27DF4A5D009B8688 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,14 +58,31 @@
 		89CDE60827DF4A5D009B8688 /* Password */ = {
 			isa = PBXGroup;
 			children = (
-				89CDE60927DF4A5D009B8688 /* AppDelegate.swift */,
-				89CDE60B27DF4A5D009B8688 /* SceneDelegate.swift */,
+				89CDE61F27DF4D68009B8688 /* System */,
 				89CDE60D27DF4A5D009B8688 /* ViewController.swift */,
+				8994993827E08F2C0078AF18 /* PasswordTextField.swift */,
+				89CDE61E27DF4D54009B8688 /* Files */,
+			);
+			path = Password;
+			sourceTree = "<group>";
+		};
+		89CDE61E27DF4D54009B8688 /* Files */ = {
+			isa = PBXGroup;
+			children = (
 				89CDE61227DF4A60009B8688 /* Assets.xcassets */,
 				89CDE61427DF4A60009B8688 /* LaunchScreen.storyboard */,
 				89CDE61727DF4A60009B8688 /* Info.plist */,
 			);
-			path = Password;
+			name = Files;
+			sourceTree = "<group>";
+		};
+		89CDE61F27DF4D68009B8688 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				89CDE60927DF4A5D009B8688 /* AppDelegate.swift */,
+				89CDE60B27DF4A5D009B8688 /* SceneDelegate.swift */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +157,7 @@
 			files = (
 				89CDE60E27DF4A5D009B8688 /* ViewController.swift in Sources */,
 				89CDE60A27DF4A5D009B8688 /* AppDelegate.swift in Sources */,
+				8994993927E08F2C0078AF18 /* PasswordTextField.swift in Sources */,
 				89CDE60C27DF4A5D009B8688 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
