@@ -66,6 +66,12 @@ extension PasswordTextField {
         eyeButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
         eyeButton.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: 8).isActive = true
         eyeButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        
+        // CHCR
+        
+        lockImageView.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+        textField.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal)
+        eyeButton.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
     }
     
     @objc private func togglePasswordView() {
