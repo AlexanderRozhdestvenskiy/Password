@@ -12,6 +12,7 @@ class PasswordTextField: UIView {
     let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
     let textField = UITextField()
     let placeholderText: String
+    let eyeButton = UIButton(type: .custom)
     
     init(placeholderText: String) {
         self.placeholderText = placeholderText
@@ -44,16 +45,31 @@ extension PasswordTextField {
 //        textField.delegate = self
         textField.keyboardType = .asciiCapable
         textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel])
+        
+        eyeButton.translatesAutoresizingMaskIntoConstraints = false
+        eyeButton.setImage(UIImage(systemName: "eye.circle"), for: .normal)
+        eyeButton.setImage(UIImage(systemName: "eye.slash.circle"), for: .selected)
+        eyeButton.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
     }
     
     private func layout() {
         addSubview(lockImageView)
         addSubview(textField)
+        addSubview(eyeButton)
         
         lockImageView.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
         lockImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         
         textField.topAnchor.constraint(equalTo: topAnchor).isActive = true
         textField.leadingAnchor.constraint(equalTo: lockImageView.trailingAnchor, constant: 8).isActive = true
+        
+        eyeButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
+        eyeButton.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: 8).isActive = true
+        eyeButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+    }
+    
+    @objc private func togglePasswordView() {
+        textField.isSecureTextEntry.toggle()
+        eyeButton.isSelected.toggle()
     }
 }
