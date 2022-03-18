@@ -13,6 +13,7 @@ class PasswordTextField: UIView {
     let textField = UITextField()
     let placeholderText: String
     let eyeButton = UIButton(type: .custom)
+    let dividerView = UIView()
     
     init(placeholderText: String) {
         self.placeholderText = placeholderText
@@ -28,7 +29,7 @@ class PasswordTextField: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 200)
+        return CGSize(width: 200, height: 50)
     }
 }
 
@@ -50,12 +51,16 @@ extension PasswordTextField {
         eyeButton.setImage(UIImage(systemName: "eye.circle"), for: .normal)
         eyeButton.setImage(UIImage(systemName: "eye.slash.circle"), for: .selected)
         eyeButton.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
+        
+        dividerView.translatesAutoresizingMaskIntoConstraints = false
+        dividerView.backgroundColor = .separator
     }
     
     private func layout() {
         addSubview(lockImageView)
         addSubview(textField)
         addSubview(eyeButton)
+        addSubview(dividerView)
         
         lockImageView.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
         lockImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
@@ -66,6 +71,11 @@ extension PasswordTextField {
         eyeButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
         eyeButton.leadingAnchor.constraint(equalTo: textField.trailingAnchor, constant: 8).isActive = true
         eyeButton.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        
+        dividerView.topAnchor.constraint(equalTo: textField.bottomAnchor, constant: 8).isActive = true
+        dividerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        dividerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        dividerView.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
         // CHCR
         
