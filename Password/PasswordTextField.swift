@@ -14,6 +14,7 @@ class PasswordTextField: UIView {
     let placeholderText: String
     let eyeButton = UIButton(type: .custom)
     let dividerView = UIView()
+    let errorLabel = UILabel()
     
     init(placeholderText: String) {
         self.placeholderText = placeholderText
@@ -54,6 +55,15 @@ extension PasswordTextField {
         
         dividerView.translatesAutoresizingMaskIntoConstraints = false
         dividerView.backgroundColor = .separator
+        
+        errorLabel.translatesAutoresizingMaskIntoConstraints = false
+        errorLabel.font = .preferredFont(forTextStyle: .footnote)
+        errorLabel.text = "Enter your password"
+        errorLabel.adjustsFontSizeToFitWidth = true
+        errorLabel.minimumScaleFactor = 0.8
+        errorLabel.textColor = .systemRed
+        errorLabel.textAlignment = .left
+        errorLabel.isHidden = false
     }
     
     private func layout() {
@@ -61,6 +71,7 @@ extension PasswordTextField {
         addSubview(textField)
         addSubview(eyeButton)
         addSubview(dividerView)
+        addSubview(errorLabel)
         
         lockImageView.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
         lockImageView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
@@ -76,6 +87,10 @@ extension PasswordTextField {
         dividerView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         dividerView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         dividerView.heightAnchor.constraint(equalToConstant: 1).isActive = true
+        
+        errorLabel.topAnchor.constraint(equalTo: dividerView.bottomAnchor, constant: 4).isActive = true
+        errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         
         // CHCR
         
