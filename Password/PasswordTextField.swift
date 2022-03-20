@@ -30,21 +30,19 @@ class PasswordTextField: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 50)
+        return CGSize(width: 200, height: 60)
     }
 }
 
 extension PasswordTextField {
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemOrange
         
         lockImageView.translatesAutoresizingMaskIntoConstraints = false
         
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.isSecureTextEntry = false
         textField.placeholder = placeholderText
-//        textField.delegate = self
         textField.keyboardType = .asciiCapable
         textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel])
         
@@ -58,11 +56,8 @@ extension PasswordTextField {
         
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.font = .preferredFont(forTextStyle: .footnote)
-        errorLabel.text = "Enter your password"
-        errorLabel.adjustsFontSizeToFitWidth = true
-        errorLabel.minimumScaleFactor = 0.8
+        errorLabel.text = "Enter your password and again and again and again and again and again and again and again"
         errorLabel.textColor = .systemRed
-        errorLabel.textAlignment = .left
         errorLabel.isHidden = false
     }
     
