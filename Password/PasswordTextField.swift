@@ -58,6 +58,7 @@ extension PasswordTextField {
         errorLabel.font = .preferredFont(forTextStyle: .footnote)
         errorLabel.text = "Enter your password and again and again and again and again and again and again and again"
         errorLabel.textColor = .systemRed
+        errorLabel.numberOfLines = 0
         errorLabel.isHidden = false
     }
     
