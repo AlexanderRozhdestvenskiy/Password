@@ -14,8 +14,24 @@ class PasswordCriterialView: UIView {
     let imageView = UIImageView()
     let labelView = UILabel()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    let checkmarkImage = UIImage(systemName: "checkmark.circle")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+    let xkmarkImage = UIImage(systemName: "xmark.circle")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
+    let circleImage = UIImage(systemName: "circle")?.withTintColor(.tertiaryLabel, renderingMode: .alwaysOriginal)
+    
+    var isCriteriaMet: Bool = false {
+        didSet {
+            if isCriteriaMet {
+                imageView.image = checkmarkImage
+            } else {
+                imageView.image = xkmarkImage
+            }
+        }
+    }
+    
+    init(text: String) {
+        super.init(frame: .zero)
+        
+        labelView.text = text
         
         style()
         layout()
@@ -31,7 +47,6 @@ class PasswordCriterialView: UIView {
     
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemOrange
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
@@ -41,6 +56,8 @@ class PasswordCriterialView: UIView {
         imageView.image = UIImage(systemName: "circle")?.withTintColor(.tertiaryLabel, renderingMode: .alwaysOriginal)
         
         labelView.translatesAutoresizingMaskIntoConstraints = false
+        labelView.font = .preferredFont(forTextStyle: .subheadline)
+        labelView.textColor = .secondaryLabel
     }
     
     private func layout() {
@@ -54,7 +71,16 @@ class PasswordCriterialView: UIView {
         stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
+        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
+        
         imageView.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
         labelView.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal)
+    }
+    
+    // MARK: Action
+    
+    private func reset() {
+        isCriteriaMet = false
+        imageView.image = circleImage
     }
 }
