@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     let stackView = UIStackView()
     
     let newPasswordTextField = PasswordTextField(placeholderText: "New Password")
-    let criterialView = PasswordCriterialView(text: "uppercase letter (A-Z)")
     let statusView = PasswordStatusView()
 
     override func viewDidLoad() {
@@ -32,7 +31,6 @@ extension ViewController {
     
     private func layout() {
         stackView.addArrangedSubview(newPasswordTextField)
-        stackView.addArrangedSubview(criterialView)
         stackView.addArrangedSubview(statusView)
         
         view.addSubview(stackView)

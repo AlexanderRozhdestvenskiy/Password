@@ -10,6 +10,12 @@ import UIKit
 class PasswordStatusView: UIView {
     
     let stackView = UIStackView()
+    
+    let lengthCriteriaView = PasswordCriterialView(text: "8-32 characters (no spaces)")
+    let uppercaseCriteriaView = PasswordCriterialView(text: "uppercase letter (A-Z)")
+    let lowerCaseCriteriaView = PasswordCriterialView(text: "lowercase (a-z)")
+    let digitCriteriaView = PasswordCriterialView(text: "digit (0-9)")
+    let specialCharacterCriteriaView = PasswordCriterialView(text: "special character (e.g. !@#$%^)")
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,9 +40,16 @@ class PasswordStatusView: UIView {
         stackView.axis = .vertical
         stackView.spacing = 8
         stackView.backgroundColor = .systemGreen
+        stackView.distribution = .equalCentering
     }
     
     private func layout() {
+        stackView.addArrangedSubview(lengthCriteriaView)
+        stackView.addArrangedSubview(uppercaseCriteriaView)
+        stackView.addArrangedSubview(lowerCaseCriteriaView)
+        stackView.addArrangedSubview(digitCriteriaView)
+        stackView.addArrangedSubview(specialCharacterCriteriaView)
+        
         addSubview(stackView)
         
         stackView.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
