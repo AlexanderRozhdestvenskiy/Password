@@ -36,13 +36,11 @@ class PasswordStatusView: UIView {
     
     private func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemPink
+        backgroundColor = .tertiarySystemFill
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 8
-        stackView.backgroundColor = .systemGreen
-        stackView.distribution = .equalCentering
         
         criterialLabel.translatesAutoresizingMaskIntoConstraints = false
         criterialLabel.numberOfLines = 0
