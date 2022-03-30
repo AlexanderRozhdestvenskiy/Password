@@ -41,9 +41,11 @@ extension PasswordTextField {
         lockImageView.translatesAutoresizingMaskIntoConstraints = false
         
         textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.delegate = self
         textField.isSecureTextEntry = false
         textField.placeholder = placeholderText
         textField.keyboardType = .asciiCapable
+        textField.addTarget(self, action: #selector(textFieldEditingChanget), for: .editingChanged)
         textField.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel])
         
         eyeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -56,10 +58,11 @@ extension PasswordTextField {
         
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.font = .preferredFont(forTextStyle: .footnote)
-        errorLabel.text = "Enter your password and again and again and again and again and again and again and again"
+        errorLabel.text = "Your password must meet the requirements below"
         errorLabel.textColor = .systemRed
         errorLabel.numberOfLines = 0
-        errorLabel.isHidden = false
+        errorLabel.lineBreakMode = .byWordWrapping
+        errorLabel.isHidden = true
     }
     
     private func layout() {
@@ -99,4 +102,12 @@ extension PasswordTextField {
         textField.isSecureTextEntry.toggle()
         eyeButton.isSelected.toggle()
     }
+    
+    @objc private func textFieldEditingChanget(_ sender: UITextField) {
+        print("foo - \(sender.text ?? "nil")")
+    }
+}
+
+extension PasswordTextField: UITextFieldDelegate {
+    
 }
