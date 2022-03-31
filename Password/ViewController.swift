@@ -30,6 +30,8 @@ extension ViewController {
         stackView.axis = .vertical
         stackView.spacing = 20
         
+        newPasswordTextField.delegate = self
+        
         statusView.layer.cornerRadius = 8
         statusView.clipsToBounds = true
         
@@ -52,3 +54,10 @@ extension ViewController {
     }
 }
 
+extension ViewController: PasswordTextFieldDelegate {
+    func editingChanged(_ sender: PasswordTextField) {
+        if sender === newPasswordTextField {
+            
+        }
+    }
+}

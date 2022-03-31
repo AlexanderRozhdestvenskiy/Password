@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol PasswordTextFieldDelegate: AnyObject {
+    func editingChanged(_ sender: PasswordTextField)
+}
+
 class PasswordTextField: UIView {
+    
+    weak var delegate: PasswordTextFieldDelegate?
     
     let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
     let textField = UITextField()
@@ -104,7 +110,7 @@ extension PasswordTextField {
     }
     
     @objc private func textFieldEditingChanget(_ sender: UITextField) {
-        print("foo - \(sender.text ?? "nil")")
+        delegate?.editingChanged(self)
     }
 }
 
