@@ -19,4 +19,8 @@ struct PasswordCriteria {
     static func lengthAndSpaceMet(_ text: String) -> Bool {
         lengthCriteriaMet(text) && noSpaceCriteriaMet(text)
     }
+    
+    static func uppercaseMet(_ text: String) -> Bool {
+        text.range(of: "[A-Z]+", options: .regularExpression) != nil
+    }
 }

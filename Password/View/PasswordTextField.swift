@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol PasswordTextFieldDelegate: AnyObject {
-    func editingChanged(_ sender: PasswordTextField)
-}
-
 class PasswordTextField: UIView {
     
     weak var delegate: PasswordTextFieldDelegate?
