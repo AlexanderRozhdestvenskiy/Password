@@ -79,7 +79,7 @@ class PasswordCriterialView: UIView {
     
     // MARK: Action
     
-    private func reset() {
+    func reset() {
         isCriteriaMet = false
         imageView.image = circleImage
     }
