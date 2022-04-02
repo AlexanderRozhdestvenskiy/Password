@@ -72,12 +72,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		89B74CE727F7547C0068E56E /* Protocol */ = {
+		89B74CE727F7547C0068E56E /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				89B74CE827F754A80068E56E /* PasswordTextFieldDelegate.swift */,
 			);
-			path = Protocol;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		89CDE5FD27DF4A5D009B8688 = {
@@ -104,7 +104,7 @@
 				89B74CE427F7543C0068E56E /* View */,
 				89B74CE527F754610068E56E /* Controller */,
 				89B74CE627F754710068E56E /* Model */,
-				89B74CE727F7547C0068E56E /* Protocol */,
+				89B74CE727F7547C0068E56E /* Protocols */,
 				89CDE61E27DF4D54009B8688 /* Files */,
 			);
 			path = Password;
