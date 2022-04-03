@@ -23,7 +23,7 @@
 		8937C97527EC5F1F009C9E3F /* PasswordStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusView.swift; sourceTree = "<group>"; };
 		8994993827E08F2C0078AF18 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		89B4EED627E88F5B00D527B6 /* PasswordCriterialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriterialView.swift; sourceTree = "<group>"; };
-		89B74CE827F754A80068E56E /* PasswordTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordTextFieldDelegate.swift; path = Password/View/PasswordTextFieldDelegate.swift; sourceTree = SOURCE_ROOT; };
+		89B74CE827F754A80068E56E /* PasswordTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordTextFieldDelegate.swift; path = Password/Model/PasswordTextFieldDelegate.swift; sourceTree = SOURCE_ROOT; };
 		89CC145027F5AAA9002BB267 /* PasswordCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteria.swift; sourceTree = "<group>"; };
 		89CDE60627DF4A5D009B8688 /* Password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CDE60927DF4A5D009B8688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,17 +67,10 @@
 		89B74CE627F754710068E56E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				89B74CE827F754A80068E56E /* PasswordTextFieldDelegate.swift */,
 				89CC145027F5AAA9002BB267 /* PasswordCriteria.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		89B74CE727F7547C0068E56E /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				89B74CE827F754A80068E56E /* PasswordTextFieldDelegate.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		89CDE5FD27DF4A5D009B8688 = {
@@ -104,7 +97,6 @@
 				89B74CE427F7543C0068E56E /* View */,
 				89B74CE527F754610068E56E /* Controller */,
 				89B74CE627F754710068E56E /* Model */,
-				89B74CE727F7547C0068E56E /* Protocols */,
 				89CDE61E27DF4D54009B8688 /* Files */,
 			);
 			path = Password;
