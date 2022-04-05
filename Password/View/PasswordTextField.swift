@@ -111,5 +111,13 @@ extension PasswordTextField {
 }
 
 extension PasswordTextField: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("foo - textFieldDidEndEditing: \(textField.text)")
+    }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("foo - textFieldShouldReturn")
+        textField.endEditing(true)
+        return true
+    }
 }

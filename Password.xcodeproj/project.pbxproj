@@ -19,6 +19,19 @@
 		89CDE61627DF4A60009B8688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CDE61427DF4A60009B8688 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		E6D14B4A27FAF9850081C143 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8937C97527EC5F1F009C9E3F /* PasswordStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStatusView.swift; sourceTree = "<group>"; };
 		8994993827E08F2C0078AF18 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
@@ -131,6 +144,7 @@
 				89CDE60227DF4A5D009B8688 /* Sources */,
 				89CDE60327DF4A5D009B8688 /* Frameworks */,
 				89CDE60427DF4A5D009B8688 /* Resources */,
+				E6D14B4A27FAF9850081C143 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -148,7 +162,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					89CDE60527DF4A5D009B8688 = {
