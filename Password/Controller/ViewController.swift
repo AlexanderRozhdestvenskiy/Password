@@ -19,12 +19,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setup()
         style()
         layout()
     }
 }
 
 extension ViewController {
+    private func setup() {
+        setupDismissKeyboardGesture()
+    }
+    
+    private func setupDismissKeyboardGesture() {
+        let didmissKeyboardTap = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        view.addGestureRecognizer(didmissKeyboardTap)
+    }
+    
+    @objc private func viewTapped(_ recognizer: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     private func style() {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
