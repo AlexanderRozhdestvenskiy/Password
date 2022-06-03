@@ -9,14 +9,23 @@ import UIKit
 
 class PasswordTextField: UIView {
     
+    typealias CustomValidation = (_ textValue: String?) -> (Bool, String)?
+    
     weak var delegate: PasswordTextFieldDelegate?
     
     let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
     let textField = UITextField()
-    let placeholderText: String
     let eyeButton = UIButton(type: .custom)
     let dividerView = UIView()
     let errorLabel = UILabel()
+    
+    let placeholderText: String
+    var customValidation: CustomValidation?
+    
+    var text: String? {
+        get { return textField.text}
+        set { textField.text = newValue }
+    }
     
     init(placeholderText: String) {
         self.placeholderText = placeholderText
@@ -112,12 +121,34 @@ extension PasswordTextField {
 
 extension PasswordTextField: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print(textField.text ?? "")
+        delegate?.editingDidEnd(self)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("foo - textFieldShouldReturn")
         textField.endEditing(true)
         return true
+    }
+}
+
+extension PasswordTextField {
+    func validate() -> Bool {
+        if let customValidation = customValidation,
+            let customValidationResult = customValidation(text),
+            customValidationResult.0 == false {
+            showError(customValidationResult.1)
+            return false
+        }
+        clearError()
+        return true
+    }
+    
+    private func showError(_ errorMessage: String) {
+        errorLabel.isHidden = false
+        errorLabel.text = errorMessage
+    }
+    
+    private func clearError() {
+        errorLabel.isHidden = true
+        errorLabel.text = ""
     }
 }
