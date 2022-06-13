@@ -30,6 +30,7 @@ class ViewController: UIViewController {
 extension ViewController {
     private func setup() {
         setupNewPassword()
+        setupConfirmPassword()
         setupDismissKeyboardGesture()
     }
     
@@ -56,6 +57,24 @@ extension ViewController {
         }
         
         newPasswordTextField.customValidation = newPasswordValidation
+        newPasswordTextField.delegate = self
+    }
+    
+    private func setupConfirmPassword() {
+        let confirmPasswordValidation: CustomValidation = { text in
+            guard let text = text, !text.isEmpty else {
+                return (false, "Enter your password.")
+            }
+            
+            guard text == self.newPasswordTextField.text else {
+                return (false, "Password do not match.")
+            }
+            
+            return (true, "")
+        }
+        
+        confirmPasswordTextField.customValidation = confirmPasswordValidation
+        confirmPasswordTextField.delegate = self
     }
     
     private func setupDismissKeyboardGesture() {
@@ -71,8 +90,6 @@ extension ViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 20
-        
-        newPasswordTextField.delegate = self
         
         statusView.layer.cornerRadius = 8
         statusView.clipsToBounds = true
@@ -107,6 +124,8 @@ extension ViewController: PasswordTextFieldDelegate {
         if sender === newPasswordTextField {
             statusView.shouldResetCriteria = false
             _ = newPasswordTextField.validate()
+        } else if sender == confirmPasswordTextField {
+            _ = confirmPasswordTextField.validate()
         }
     }
 }
