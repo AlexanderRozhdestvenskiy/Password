@@ -84,6 +84,7 @@ class PasswordStatusView: UIView {
 }
 
 extension PasswordStatusView {
+    
     func updateDisplay(_ text: String) {
         let lengthAndNoSpaceMet = PasswordCriteria.lengthAndSpaceMet(text)
         let uppercaseMet = PasswordCriteria.uppercaseMet(text)

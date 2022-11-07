@@ -17,6 +17,7 @@
 		89CDE60E27DF4A5D009B8688 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CDE60D27DF4A5D009B8688 /* ViewController.swift */; };
 		89CDE61327DF4A60009B8688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CDE61227DF4A60009B8688 /* Assets.xcassets */; };
 		89CDE61627DF4A60009B8688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CDE61427DF4A60009B8688 /* LaunchScreen.storyboard */; };
+		E681304929197E4200BEC5CA /* UIResponder + Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = E681304829197E4200BEC5CA /* UIResponder + Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +47,7 @@
 		89CDE61527DF4A60009B8688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89CDE61727DF4A60009B8688 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89CDE61D27DF4D2F009B8688 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E681304829197E4200BEC5CA /* UIResponder + Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIResponder + Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				89B74CE427F7543C0068E56E /* View */,
 				89B74CE527F754610068E56E /* Controller */,
 				89B74CE627F754710068E56E /* Model */,
+				E681304729197DF700BEC5CA /* Utils */,
 				89CDE61E27DF4D54009B8688 /* Files */,
 			);
 			path = Password;
@@ -132,6 +135,14 @@
 				89CDE60B27DF4A5D009B8688 /* SceneDelegate.swift */,
 			);
 			path = System;
+			sourceTree = "<group>";
+		};
+		E681304729197DF700BEC5CA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E681304829197E4200BEC5CA /* UIResponder + Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -209,6 +220,7 @@
 				89B74CE927F754A80068E56E /* PasswordTextFieldDelegate.swift in Sources */,
 				89CDE60A27DF4A5D009B8688 /* AppDelegate.swift in Sources */,
 				8994993927E08F2C0078AF18 /* PasswordTextField.swift in Sources */,
+				E681304929197E4200BEC5CA /* UIResponder + Utils.swift in Sources */,
 				8937C97627EC5F1F009C9E3F /* PasswordStatusView.swift in Sources */,
 				89B4EED727E88F5B00D527B6 /* PasswordCriterialView.swift in Sources */,
 				89CC145127F5AAA9002BB267 /* PasswordCriteria.swift in Sources */,

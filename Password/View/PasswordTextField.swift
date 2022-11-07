@@ -104,9 +104,9 @@ extension PasswordTextField {
         
         // CHCR
         
-        lockImageView.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
-        textField.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal)
-        eyeButton.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+        lockImageView.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        textField.setContentHuggingPriority(.defaultLow, for: .horizontal)
+        eyeButton.setContentHuggingPriority(.defaultHigh, for: .horizontal)
     }
     
     @objc private func togglePasswordView() {
