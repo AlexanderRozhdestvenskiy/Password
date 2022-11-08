@@ -7,18 +7,18 @@
 
 import UIKit
 
-class PasswordCriterialView: UIView {
+final class PasswordCriterialView: UIView {
     
-    let stackView = UIStackView()
+    private let stackView = UIStackView()
     
-    let imageView = UIImageView()
-    let labelView = UILabel()
+    private let imageView = UIImageView()
+    private let labelView = UILabel()
     
-    let checkmarkImage = UIImage(systemName: "checkmark.circle")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
-    let xkmarkImage = UIImage(systemName: "xmark.circle")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
-    let circleImage = UIImage(systemName: "circle")?.withTintColor(.tertiaryLabel, renderingMode: .alwaysOriginal)
+    private let checkmarkImage = UIImage(systemName: "checkmark.circle")?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+    private let xkmarkImage = UIImage(systemName: "xmark.circle")?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
+    private let circleImage = UIImage(systemName: "circle")?.withTintColor(.tertiaryLabel, renderingMode: .alwaysOriginal)
     
-    var isCriteriaMet: Bool = false {
+    var isCriteriaMet = false {
         didSet {
             if isCriteriaMet {
                 imageView.image = checkmarkImage
@@ -42,7 +42,7 @@ class PasswordCriterialView: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 40)
+        CGSize(width: 200, height: 40)
     }
     
     private func style() {

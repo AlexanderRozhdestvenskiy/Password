@@ -7,23 +7,23 @@
 
 import UIKit
 
-class PasswordTextField: UIView {
+final class PasswordTextField: UIView {
     
     typealias CustomValidation = (_ textValue: String?) -> (Bool, String)?
     
     weak var delegate: PasswordTextFieldDelegate?
     
-    let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
+    private let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
     let textField = UITextField()
-    let eyeButton = UIButton(type: .custom)
-    let dividerView = UIView()
-    let errorLabel = UILabel()
+    private let eyeButton = UIButton(type: .custom)
+    private let dividerView = UIView()
+    private let errorLabel = UILabel()
     
-    let placeholderText: String
+    private let placeholderText: String
     var customValidation: CustomValidation?
     
     var text: String? {
-        get { return textField.text}
+        get { textField.text}
         set { textField.text = newValue }
     }
     
@@ -41,7 +41,7 @@ class PasswordTextField: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 60)
+        CGSize(width: 200, height: 60)
     }
 }
 

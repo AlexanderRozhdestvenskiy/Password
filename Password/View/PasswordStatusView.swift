@@ -7,19 +7,19 @@
 
 import UIKit
 
-class PasswordStatusView: UIView {
+final class PasswordStatusView: UIView {
     
-    let stackView = UIStackView()
+    private let stackView = UIStackView()
     
-    let criterialLabel = UILabel()
+    private let criterialLabel = UILabel()
     
-    let lengthCriteriaView = PasswordCriterialView(text: "8-32 characters (no spaces)")
-    let uppercaseCriteriaView = PasswordCriterialView(text: "uppercase letter (A-Z)")
-    let lowerCaseCriteriaView = PasswordCriterialView(text: "lowercase (a-z)")
-    let digitCriteriaView = PasswordCriterialView(text: "digit (0-9)")
-    let specialCharacterCriteriaView = PasswordCriterialView(text: "special character (e.g. !@#$%^)")
+    private let lengthCriteriaView = PasswordCriterialView(text: "8-32 characters (no spaces)")
+    private let uppercaseCriteriaView = PasswordCriterialView(text: "uppercase letter (A-Z)")
+    private let lowerCaseCriteriaView = PasswordCriterialView(text: "lowercase (a-z)")
+    private let digitCriteriaView = PasswordCriterialView(text: "digit (0-9)")
+    private let specialCharacterCriteriaView = PasswordCriterialView(text: "special character (e.g. !@#$%^)")
     
-    var shouldResetCriteria: Bool = true
+    var shouldResetCriteria = true
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,7 +33,7 @@ class PasswordStatusView: UIView {
     }
     
     override var intrinsicContentSize: CGSize {
-        return CGSize(width: 200, height: 200)
+        CGSize(width: 200, height: 200)
     }
     
     private func style() {

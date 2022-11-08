@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Password
 //
 //  Created by Alexander Rozhdestvenskiy on 14.03.2022.
@@ -7,16 +7,16 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     typealias CustomValidation = PasswordTextField.CustomValidation
     
-    let stackView = UIStackView()
+    private let stackView = UIStackView()
     
-    let newPasswordTextField = PasswordTextField(placeholderText: "New Password")
-    let statusView = PasswordStatusView()
-    let confirmPasswordTextField = PasswordTextField(placeholderText: "Re-enter new password")
-    let resetButton = UIButton(type: .system)
+    private let newPasswordTextField = PasswordTextField(placeholderText: "New Password")
+    private let statusView = PasswordStatusView()
+    private let confirmPasswordTextField = PasswordTextField(placeholderText: "Re-enter new password")
+    private let resetButton = UIButton(type: .system)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +27,7 @@ final class ViewController: UIViewController {
     }
 }
 
-extension ViewController {
+extension MainViewController {
     
     private func setup() {
         setupNewPassword()
@@ -152,7 +152,8 @@ extension ViewController {
     }
 }
 
-extension ViewController: PasswordTextFieldDelegate {
+// MARK: Delegate
+extension MainViewController: PasswordTextFieldDelegate {
     
     func editingChanged(_ sender: PasswordTextField) {
         if sender === newPasswordTextField {
@@ -171,7 +172,7 @@ extension ViewController: PasswordTextFieldDelegate {
 }
 
 // MARK: Action
-extension ViewController {
+extension MainViewController {
     
     @objc private func resetButtonTap() {
         view.endEditing(true)
