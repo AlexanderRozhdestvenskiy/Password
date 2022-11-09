@@ -48,5 +48,40 @@ class MainViewControllerTests: XCTestCase {
         
         XCTAssertEqual(vc.newPasswordTextField.errorLabel.text!, "")
     }
+}
+
+class ConfirmPasswordValidation: XCTestCase {
     
+    var vc: MainViewController!
+    let validPassword = "12345Aa!"
+    let tooShort = "1Aa!"
+    
+    override func setUp() {
+        super.setUp()
+        
+        vc = MainViewController()
+    }
+    
+    func testEmptyPassword() throws {
+        vc.confirmPasswordText = ""
+        vc.resetButtonTap()
+        
+        XCTAssertEqual(vc.confirmPasswordTextField.errorLabel.text!, "Enter your password.")
+    }
+    
+    func testPasswordsDoNotMatch() throws {
+        vc.newPasswordText = validPassword
+        vc.confirmPasswordText = tooShort
+        vc.resetButtonTap()
+        
+        XCTAssertEqual(vc.confirmPasswordTextField.errorLabel.text!, "Password do not match.")
+    }
+    
+    func testPasswordsMatch() throws {
+        vc.newPasswordText = validPassword
+        vc.confirmPasswordText = validPassword
+        vc.resetButtonTap()
+        
+        XCTAssertEqual(vc.confirmPasswordTextField.errorLabel.text!, "")
+    }
 }

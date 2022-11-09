@@ -203,7 +203,7 @@ extension MainViewController {
         set { newPasswordTextField.text = newValue }
     }
     
-    var nonfirmPasswordText: String? {
+    var confirmPasswordText: String? {
         get { confirmPasswordTextField.text }
         set { confirmPasswordTextField.text = newValue }
     }
