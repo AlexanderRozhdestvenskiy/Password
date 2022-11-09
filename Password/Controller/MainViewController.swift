@@ -17,6 +17,8 @@ final class MainViewController: UIViewController {
     let statusView = PasswordStatusView()
     let confirmPasswordTextField = PasswordTextField(placeholderText: "Re-enter new password")
     private let resetButton = UIButton(type: .system)
+    
+    var alert: UIAlertController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -186,7 +188,10 @@ extension MainViewController {
     }
     
     private func showAlert(title: String, message: String) {
-        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        
+        guard let alert = alert else { return }
+        
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
         alert.title = title
