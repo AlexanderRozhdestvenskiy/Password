@@ -17,7 +17,7 @@ final class PasswordTextField: UIView {
     let textField = UITextField()
     private let eyeButton = UIButton(type: .custom)
     private let dividerView = UIView()
-    private let errorLabel = UILabel()
+    let errorLabel = UILabel()
     
     private let placeholderText: String
     var customValidation: CustomValidation?

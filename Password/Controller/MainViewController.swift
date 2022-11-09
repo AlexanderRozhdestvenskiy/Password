@@ -13,9 +13,9 @@ final class MainViewController: UIViewController {
     
     private let stackView = UIStackView()
     
-    private let newPasswordTextField = PasswordTextField(placeholderText: "New Password")
-    private let statusView = PasswordStatusView()
-    private let confirmPasswordTextField = PasswordTextField(placeholderText: "Re-enter new password")
+    let newPasswordTextField = PasswordTextField(placeholderText: "New Password")
+    let statusView = PasswordStatusView()
+    let confirmPasswordTextField = PasswordTextField(placeholderText: "Re-enter new password")
     private let resetButton = UIButton(type: .system)
 
     override func viewDidLoad() {
@@ -174,7 +174,7 @@ extension MainViewController: PasswordTextFieldDelegate {
 // MARK: Action
 extension MainViewController {
     
-    @objc private func resetButtonTap() {
+    @objc func resetButtonTap() {
         view.endEditing(true)
         
         let isValidNewPassword = newPasswordTextField.validate()
@@ -195,3 +195,16 @@ extension MainViewController {
     }
 }
 
+// MARK: Tests
+extension MainViewController {
+    
+    var newPasswordText: String? {
+        get { newPasswordTextField.text }
+        set { newPasswordTextField.text = newValue }
+    }
+    
+    var nonfirmPasswordText: String? {
+        get { confirmPasswordTextField.text }
+        set { confirmPasswordTextField.text = newValue }
+    }
+}

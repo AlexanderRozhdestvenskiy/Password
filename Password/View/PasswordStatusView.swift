@@ -13,11 +13,11 @@ final class PasswordStatusView: UIView {
     
     private let criterialLabel = UILabel()
     
-    private let lengthCriteriaView = PasswordCriterialView(text: "8-32 characters (no spaces)")
-    private let uppercaseCriteriaView = PasswordCriterialView(text: "uppercase letter (A-Z)")
-    private let lowerCaseCriteriaView = PasswordCriterialView(text: "lowercase (a-z)")
-    private let digitCriteriaView = PasswordCriterialView(text: "digit (0-9)")
-    private let specialCharacterCriteriaView = PasswordCriterialView(text: "special character (e.g. !@#$%^)")
+    let lengthCriteriaView = PasswordCriterialView(text: "8-32 characters (no spaces)")
+    let uppercaseCriteriaView = PasswordCriterialView(text: "uppercase letter (A-Z)")
+    let lowerCaseCriteriaView = PasswordCriterialView(text: "lowercase (a-z)")
+    let digitCriteriaView = PasswordCriterialView(text: "digit (0-9)")
+    let specialCharacterCriteriaView = PasswordCriterialView(text: "special character (e.g. !@#$%^)")
     
     var shouldResetCriteria = true
     
